@@ -21,13 +21,11 @@ fn part2(input: &str) {
         oxygen = find_common(&mut oxygen, i.0, true);
         c02 = find_common(&mut c02, i.0, false);
     }
-    println!("{:?}", oxygen);
-    println!("{:?}", c02);
 
     let result = usize::from_str_radix(oxygen.first().unwrap(), 2).unwrap()
         * usize::from_str_radix(c02.first().unwrap(), 2).unwrap();
 
-    println!("Day 3 Result:  {:?}", result);
+    println!("Day 3 Result: {:?}", result);
 }
 
 fn find_common<'a>(commands: &mut Vec<&'a str>, position: usize, tie_up: bool) -> Vec<&'a str> {
