@@ -8,8 +8,8 @@ mod ocean;
 pub fn run() {
     let input = fs::read_to_string("./inputs/5.txt").expect("File required");
 
-    part1(&input);
-    part2(&input);
+    println!("Day 5 - Part 1 - Answer: {:?}", part1(&input));
+    println!("Day 5 - Part 2 - Answer: {:?}", part2(&input));
 }
 
 fn part1(input: &str) -> i32 {
@@ -19,7 +19,6 @@ fn part1(input: &str) -> i32 {
     ocean_floor.find_vertical_segments();
 
     let answer = ocean_floor.vents_overlap();
-    println!("Day 5 - Part 1 - Answer: {:?}", answer);
 
     answer
 }
@@ -32,7 +31,6 @@ fn part2(input: &str) -> i32 {
     ocean_floor.find_diagonal_segments();
 
     let answer = ocean_floor.vents_overlap();
-    println!("Day 5 - Part 2 - Answer: {:?}", answer);
 
     answer
 }

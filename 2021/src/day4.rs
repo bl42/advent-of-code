@@ -6,8 +6,8 @@ use std::fs;
 pub fn run() {
     let input = fs::read_to_string("./inputs/4.txt").expect("File required");
 
-    part1(&input);
-    part2(&input);
+    println!("Day 4 - part 1: {:?}", part1(&input));
+    println!("Day 4 - part 2: {:?}", part2(&input));
 }
 
 #[derive(Debug)]
@@ -131,7 +131,6 @@ fn part1(input: &str) -> i32 {
             }
 
             result = number * unused;
-            println!("Final Number: {:?}", result);
             break;
         }
     }
@@ -171,8 +170,6 @@ fn part2(input: &str) -> i32 {
             break;
         }
     }
-
-    println!("Final Number: {:?}", result);
 
     result
 }
