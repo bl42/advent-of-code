@@ -10,13 +10,13 @@ pub fn run() {
     println!("Day 6 Result - Part 2: {:?}", part1(&input, 256));
 }
 
-fn part1(input: &str, count: usize) -> i32 {
+fn part1(input: &str, count: usize) -> i64 {
     let lantern_fish: Vec<usize> = input
         .split(',')
         .map(|v| v.trim().parse().unwrap())
         .collect();
 
-    let mut fishes: [i32; 9] = [0; 9];
+    let mut fishes: [i64; 9] = [0; 9];
 
     for starting_fish in lantern_fish {
         fishes[starting_fish + 1] += 1;
