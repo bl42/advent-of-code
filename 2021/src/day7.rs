@@ -39,11 +39,7 @@ fn cost_of_fuel(crabs: &Vec<i64>, position: i64) -> i64 {
         .iter()
         .map(|crab| {
             let dist = (crab - position).abs();
-            match dist {
-                0 => 0,
-                1 => 1,
-                d => ((1..d + 1).reduce(|a, b| a + b)).unwrap(),
-            }
+            (1 + dist) * dist / 2
         })
         .collect();
     distance.iter().sum::<i64>()
