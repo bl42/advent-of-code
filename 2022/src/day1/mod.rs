@@ -4,8 +4,7 @@
 pub fn run() {
     let input = include_str!("input.txt");
 
-    println!("Day 1 - Part 1: {}", part1(&input));
-    println!("Day 1 - Part 2: {}", part2(&input));
+    println!("Day 1.1: {} \t\t Day 1.2: {}", part1(&input), part2(&input));
 }
 
 fn part1(input: &str) -> u32 {
