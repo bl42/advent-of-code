@@ -35,7 +35,7 @@ fn part2(input: &str) -> usize {
 
     elf_chores
         .into_iter()
-        .filter(|chores| chores[0].overlaps(&chores[1]))
+        .filter(|chores| chores[0].overlaps_or_overlaped(&chores[1]))
         .count()
 }
 

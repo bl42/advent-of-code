@@ -20,6 +20,9 @@ impl Chore {
         (self.range.start <= c.range.start && c.range.start <= self.range.end)
             || (self.range.start <= c.range.end && c.range.end <= self.range.end)
     }
+    pub fn overlaps_or_overlaped(&self, c: &Chore) -> bool {
+        self.overlaps(c) || c.overlaps(self)
+    }
 }
 
 impl FromStr for Chore {
@@ -60,4 +63,13 @@ fn overlaps() {
 
     assert_eq!(chore_b.overlaps(&chore_a), true);
     assert_eq!(chore_a.overlaps(&chore_b), true);
+}
+
+#[test]
+fn overlaps_or_overlaped() {
+    let chore_a: Chore = "56-56".parse().unwrap();
+    let chore_b: Chore = "55-85".parse().unwrap();
+
+    assert_eq!(chore_b.overlaps_or_overlaped(&chore_a), true);
+    assert_eq!(chore_a.overlaps_or_overlaped(&chore_b), true);
 }
