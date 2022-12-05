@@ -1,4 +1,4 @@
-// https://adventofcode.com/2022/day/3
+// https://adventofcode.com/2022/day/4
 // --- Day 4 ---
 
 mod chore;
