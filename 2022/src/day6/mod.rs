@@ -5,7 +5,7 @@ use std::collections::HashSet;
 fn find_start(input: &str, marker: usize) -> usize {
     for (i, arr) in input.as_bytes().windows(marker).enumerate() {
         let mut set = HashSet::new();
-        //test
+
         for item in arr {
             set.insert(item);
         }
