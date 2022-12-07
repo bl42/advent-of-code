@@ -47,17 +47,16 @@ impl Game {
     }
 
     pub fn draw(&self) -> bool {
-        &self.left == &self.right
+        self.left == self.right
     }
 
     pub fn winner(player: Move, opponent: Move) -> bool {
-        match (player, opponent) {
-            (Move::Paper, Move::Rock) => true,
-            (Move::Rock, Move::Scissors) => true,
-            (Move::Scissors, Move::Paper) => true,
-
-            _ => false,
-        }
+        matches!(
+            (player, opponent),
+            (Move::Paper, Move::Rock)
+                | (Move::Rock, Move::Scissors)
+                | (Move::Scissors, Move::Paper)
+        )
     }
 
     pub fn points(self) -> usize {

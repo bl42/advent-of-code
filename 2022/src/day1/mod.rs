@@ -24,9 +24,7 @@ fn part2(input: &str) -> u32 {
 fn convert_input_into_calories(input: &str) -> Vec<u32> {
     let bags: Vec<&str> = input.split("\n\n").collect();
 
-    bags.into_iter()
-        .map(count_calories_in_bag)
-        .collect()
+    bags.iter().map(|c| count_calories_in_bag(c)).collect()
 }
 
 fn count_calories_in_bag(bag: &str) -> u32 {
@@ -36,7 +34,7 @@ fn count_calories_in_bag(bag: &str) -> u32 {
         .map(|cal| cal.parse().expect("number"))
         .collect();
 
-    cals.into_iter().sum()
+    cals.iter().sum()
 }
 
 #[cfg(test)]
