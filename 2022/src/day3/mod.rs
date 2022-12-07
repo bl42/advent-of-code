@@ -6,7 +6,7 @@ use std::collections::HashSet;
 pub fn run() {
     let input = include_str!("input.txt");
 
-    println!("Day 3.1: {} \t\t Day 3.2: {}", part1(&input), part2(&input));
+    println!("Day 3.1: {} \t\t Day 3.2: {}", part1(input), part2(input));
 }
 
 fn convert_char_to_u8(letter: char) -> u8 {

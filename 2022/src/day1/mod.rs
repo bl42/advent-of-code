@@ -4,7 +4,7 @@
 pub fn run() {
     let input = include_str!("input.txt");
 
-    println!("Day 1.1: {} \t\t Day 1.2: {}", part1(&input), part2(&input));
+    println!("Day 1.1: {} \t\t Day 1.2: {}", part1(input), part2(input));
 }
 
 fn part1(input: &str) -> u32 {
@@ -25,7 +25,7 @@ fn convert_input_into_calories(input: &str) -> Vec<u32> {
     let bags: Vec<&str> = input.split("\n\n").collect();
 
     bags.into_iter()
-        .map(|bag| count_calories_in_bag(bag))
+        .map(count_calories_in_bag)
         .collect()
 }
 

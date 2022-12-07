@@ -5,7 +5,7 @@ pub struct Yard {
 }
 
 impl Yard {
-    pub fn relocate(&mut self, count: usize, from: usize, to: usize) -> () {
+    pub fn relocate(&mut self, count: usize, from: usize, to: usize) {
         for _ in 1..=count {
             if let Some(item) = self.stack[from - 1].pop() {
                 self.stack[to - 1].push(item);
@@ -13,7 +13,7 @@ impl Yard {
         }
     }
 
-    pub fn relocate_batch(&mut self, count: usize, from: usize, to: usize) -> () {
+    pub fn relocate_batch(&mut self, count: usize, from: usize, to: usize) {
         let mut items: Vec<char> = Vec::new();
         for _ in 1..=count {
             if let Some(item) = self.stack[from - 1].pop() {
@@ -38,7 +38,7 @@ impl FromStr for Yard {
         let (s, _) = s.rsplit_once('\n').unwrap();
 
         let rows: Vec<Vec<String>> = s
-            .split("\n")
+            .split('\n')
             .map(|row| {
                 row.chars()
                     .collect::<Vec<char>>()
@@ -52,7 +52,7 @@ impl FromStr for Yard {
 
         for (y, row) in rows.iter().enumerate() {
             for (x, item) in row.iter().enumerate() {
-                if item.len() > 0 {
+                if !item.is_empty() {
                     stack[x].insert(0, item.chars().nth(1).expect("should be in nth 1"))
                 }
             }

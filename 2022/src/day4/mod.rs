@@ -7,7 +7,7 @@ use chore::*;
 pub fn run() {
     let input = include_str!("input.txt");
 
-    println!("Day 4.1: {} \t\t Day 4.2: {}", part1(&input), part2(&input));
+    println!("Day 4.1: {} \t\t Day 4.2: {}", part1(input), part2(input));
 }
 
 fn convert_input_to_elf_chores(input: &str) -> Vec<Vec<Chore>> {
