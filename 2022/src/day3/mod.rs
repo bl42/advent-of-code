@@ -36,8 +36,8 @@ fn part1(input: &str) -> i32 {
         .collect();
 
     let error_in_sack_total: i32 = errors_in_sack
-        .into_iter()
-        .map(|c| convert_char_to_u8(c) as i32)
+        .iter()
+        .map(|&c| convert_char_to_u8(c) as i32)
         .into_iter()
         .sum();
 
@@ -66,7 +66,7 @@ fn part2(input: &str) -> i32 {
         })
         .collect();
 
-    groups.into_iter().sum::<i32>()
+    groups.iter().sum::<i32>()
 }
 
 #[cfg(test)]

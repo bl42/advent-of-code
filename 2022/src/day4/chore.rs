@@ -44,16 +44,16 @@ fn chores_contains() {
     let chore_a: Chore = "1-2".parse().unwrap();
     let chore_b: Chore = "1-5".parse().unwrap();
 
-    assert_eq!(chore_b.contains(&chore_a), true);
-    assert_eq!(chore_a.contains(&chore_b), false);
+    assert!(chore_b.contains(&chore_a));
+    assert!(!chore_a.contains(&chore_b));
 }
 #[test]
 fn chores_contains_or_cotained() {
     let chore_a: Chore = "1-2".parse().unwrap();
     let chore_b: Chore = "1-5".parse().unwrap();
 
-    assert_eq!(chore_b.contains_or_cotained(&chore_a), true);
-    assert_eq!(chore_a.contains_or_cotained(&chore_b), true);
+    assert!(chore_b.contains_or_cotained(&chore_a));
+    assert!(chore_a.contains_or_cotained(&chore_b));
 }
 
 #[test]
@@ -61,8 +61,8 @@ fn overlaps() {
     let chore_a: Chore = "1-2".parse().unwrap();
     let chore_b: Chore = "2-5".parse().unwrap();
 
-    assert_eq!(chore_b.overlaps(&chore_a), true);
-    assert_eq!(chore_a.overlaps(&chore_b), true);
+    assert!(chore_b.overlaps(&chore_a));
+    assert!(chore_a.overlaps(&chore_b));
 }
 
 #[test]
@@ -70,6 +70,6 @@ fn overlaps_or_overlaped() {
     let chore_a: Chore = "56-56".parse().unwrap();
     let chore_b: Chore = "55-85".parse().unwrap();
 
-    assert_eq!(chore_b.overlaps_or_overlaped(&chore_a), true);
-    assert_eq!(chore_a.overlaps_or_overlaped(&chore_b), true);
+    assert!(chore_b.overlaps_or_overlaped(&chore_a));
+    assert!(chore_a.overlaps_or_overlaped(&chore_b));
 }
