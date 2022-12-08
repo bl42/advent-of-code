@@ -3,10 +3,10 @@
 
 use std::collections::HashSet;
 
-pub fn run() {
+pub fn run() -> String {
     let input = include_str!("input.txt");
 
-    println!("Day 3.1: {} \t\t Day 3.2: {}", part1(input), part2(input));
+    format!("Day 3.1: {} \t\t Day 3.2: {}", part1(input), part2(input))
 }
 
 fn convert_char_to_u8(letter: char) -> u8 {

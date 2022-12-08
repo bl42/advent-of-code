@@ -86,10 +86,10 @@ fn part2(input: &str) -> u32 {
     size_to_remove
 }
 
-pub fn run() {
+pub fn run() -> String {
     let input = include_str!("input.txt");
 
-    println!("Day 7.1: {} \t Day 7.2: {}", part1(input), part2(input));
+    format!("Day 7.1: {} \t Day 7.2: {}", part1(input), part2(input))
 }
 
 #[cfg(test)]

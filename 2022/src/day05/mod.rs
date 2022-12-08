@@ -4,10 +4,10 @@ use yard::*;
 // https://adventofcode.com/2022/day/5
 // --- Day 5 ---
 
-pub fn run() {
+pub fn run() -> String {
     let input = include_str!("input.txt");
 
-    println!("Day 5.1: {} \t Day 5.2: {}", part1(input), part2(input));
+    format!("Day 5.1: {} \t Day 5.2: {}", part1(input), part2(input))
 }
 
 fn process_input(input: &str) -> (Yard, Vec<(usize, usize, usize)>) {

@@ -24,10 +24,10 @@ fn part2(input: &str) -> usize {
     find_start(input, 14)
 }
 
-pub fn run() {
+pub fn run() -> String {
     let input = include_str!("input.txt");
 
-    println!("Day 6.1: {} \t\t Day 6.2: {}", part1(input), part2(input));
+    format!("Day 6.1: {} \t\t Day 6.2: {}", part1(input), part2(input))
 }
 
 #[cfg(test)]

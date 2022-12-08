@@ -4,9 +4,9 @@
 mod rock_paper_scissors;
 use rock_paper_scissors::*;
 
-pub fn run() {
+pub fn run() -> String {
     let input = include_str!("input.txt");
-    println!("Day 2.1: {} \t\t Day 2.2: {}", part1(input), part2(input));
+    format!("Day 2.1: {} \t\t Day 2.2: {}", part1(input), part2(input))
 }
 
 fn part1(input: &str) -> usize {

@@ -1,20 +1,20 @@
 // https://adventofcode.com/2022/day/1
 // --- Day 1: Calorie Counting ---
 
-pub fn run() {
+pub fn run() -> String {
     let input = include_str!("input.txt");
 
-    println!("Day 1.1: {} \t\t Day 1.2: {}", part1(input), part2(input));
+    format!("Day 1.1: {} \t\t Day 1.2: {}", part1(input), part2(input))
 }
 
-fn part1(input: &str) -> u32 {
+pub fn part1(input: &str) -> u32 {
     let mut cals = convert_input_into_calories(input);
     cals.sort_by(|a, b| b.cmp(a));
 
     cals[0]
 }
 
-fn part2(input: &str) -> u32 {
+pub fn part2(input: &str) -> u32 {
     let mut cals = convert_input_into_calories(input);
     cals.sort_by(|a, b| b.cmp(a));
 
