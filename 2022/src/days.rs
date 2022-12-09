@@ -7,7 +7,7 @@ pub fn all() -> &'static [fn() -> String] {
         crate::day05::run,
         crate::day06::run,
         crate::day07::run,
-        // crate::day08::run,
+        crate::day08::run,
         // crate::day09::run,
         // crate::day10::run,
         // crate::day11::run,

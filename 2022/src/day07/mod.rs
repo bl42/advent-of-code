@@ -27,7 +27,7 @@ fn parse_directory(s: &str) -> HashMap<String, u32> {
                     .iter()
                     .map(|line| {
                         let (size, file) = line.split_once(' ').unwrap();
-                        return size.parse::<u32>().unwrap_or(0);
+                        size.parse::<u32>().unwrap_or(0)
                     })
                     .into_iter()
                     .sum();
