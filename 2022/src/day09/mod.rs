@@ -1,5 +1,5 @@
-// https://adventofcode.com/2022/day/8
-// --- Day 8 ---
+// https://adventofcode.com/2022/day/9
+// --- Day 9 ---
 
 use std::collections::{HashSet, VecDeque};
 
@@ -63,7 +63,6 @@ fn part2(input: &str) -> i32 {
                 _ => unreachable!(),
             };
             head = (head.0 + d.0, head.1 + d.1);
-            println!("{direction} {spaces}");
 
             let mut head_tmp = head;
             for (i, t) in tails.iter_mut().enumerate() {
@@ -76,7 +75,6 @@ fn part2(input: &str) -> i32 {
                     *t = (h.0 + m.0, h.1 + m.1);
                     if i == 8 {
                         tail.insert(*t);
-                        println!("{t:?}");
                     }
                 } else {
                     break;
