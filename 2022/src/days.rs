@@ -12,5 +12,6 @@ pub fn all() -> &'static [fn() -> String] {
         crate::day10::run,
         crate::day11::run,
         crate::day12::run,
+        crate::day13::run,
     ]
 }
