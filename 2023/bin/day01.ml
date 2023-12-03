@@ -1,11 +1,5 @@
 open Core
 
-let read_lines file =
-  Stdio.In_channel.with_file file ~f:(fun channel ->
-    let x = In_channel.input_all channel in
-    String.split_lines x)
-;;
-
 let filter_decode_number list =
   match list with
   | 'o' :: 'n' :: 'e' :: _ -> Some 1
@@ -41,6 +35,6 @@ let calibration acc str =
 ;;
 
 let () =
-  let line = read_lines "./inputs/day1.dat" in
+  let line = Utils.read_lines "./inputs/day01.dat" in
   List.fold line ~init:0 ~f:calibration |> Int.to_string |> print_endline
 ;;
