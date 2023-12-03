@@ -28,5 +28,44 @@ let () =
   |> List.filter_map ~f:valid_game
   |> List.fold ~init:0 ~f:(fun acc game ->
     acc + (Int.of_string @@ String.chop_prefix_exn ~prefix:"Game " game))
-  |> Fmt.pr "Result: %d"
+  |> Fmt.pr "@.\tDay 2 Part 1: %d"
+;;
+
+(* Day 2 *)
+
+let f s =
+  let (_ :: n :: color :: _) = String.split ~on:' ' s in
+  Int.of_string n, color
+;;
+
+let line_in_cube_list line =
+  String.substr_replace_all ~pattern:";" ~with_:"," line
+  |> String.split ~on:':'
+  |> List.last_exn
+  |> String.split ~on:','
+  |> List.map ~f
+;;
+
+type most_cube =
+  { mutable red : int
+  ; mutable green : int
+  ; mutable blue : int
+  }
+
+let parse_line line =
+  let most = { red = 0; blue = 0; green = 0 } in
+  line_in_cube_list line
+  |> List.iter ~f:(fun i ->
+    match i with
+    | n, "red" when most.red < n -> most.red <- n
+    | n, "blue" when most.blue < n -> most.blue <- n
+    | n, "green" when most.green < n -> most.green <- n
+    | _ -> ());
+  most.red * most.blue * most.green
+;;
+
+let () =
+  Utils.read_lines "./inputs/day02.dat"
+  |> List.fold ~init:0 ~f:(fun acc s -> acc + parse_line s)
+  |> Fmt.pr "@.\tDay 2 Part 2: %d"
 ;;
