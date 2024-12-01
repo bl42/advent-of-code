@@ -2,3 +2,10 @@
 .DS_Store
 2023/_build
 *.dat
+
+
+*.beam
+*.ez
+2024/build
+2024erl_crash.dump
+2024/.github/workflows
