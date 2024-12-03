@@ -1,10 +1,5 @@
-import day01/day01
-import gleeunit
+import days/day01
 import gleeunit/should
-
-pub fn main() {
-  gleeunit.main()
-}
 
 const test_input = "3   4
 4   3
